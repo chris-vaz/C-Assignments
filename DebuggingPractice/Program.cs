@@ -39,7 +39,7 @@ foreach(int num in EvenMoreNumbers)
 // Challenge 5
 // What can we learn from this error message?
 string MyString = "superduberawesome";
-MyString[7] = "p"; // This line is the error
+// MyString[7] = "p"; // This line is the error
 
 // The error message is indicating that a string is immutable, 
 // meaning it cannot be modified once it has been created. 
