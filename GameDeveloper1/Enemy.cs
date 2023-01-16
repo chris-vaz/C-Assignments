@@ -4,20 +4,20 @@ class Enemy
 
     public int HealthAmount;
 
-    public List<Enemy> Attacks = new List<Enemy>();
+    public List<Attack> Attacks;
 
-    public Enemy(string name, int amount)
+    public Enemy(string name, int health, List<Attack> attacks)
     {
         Name = name;
-        HealthAmount=100;
-        Attacks= new List<string>();
+        HealthAmount=health;
+        Attacks= attacks;
     }
 
-    public void RandomAttack(){
+    public virtual void RandomAttack(){
         if(Attacks.Count>0){
             Random rand= new Random();
-            int index=rand.Next(Attacks.Count);
-            Console.WriteLine($"{Name} performs {Attacks[index]} attack.");
+            int index=rand.Next(0,Attacks.Count);
+            Console.WriteLine($"{Name} performs {Attacks[index].Name} attack.");
         }
         else{
             Console.WriteLine($"{Name} have no attacks to perform");
@@ -25,6 +25,6 @@ class Enemy
     }
 
     public void AddAttack(Attack NewAttack){
-        Attack.add(NewAttack);
+        Attacks.Add(NewAttack);
     }
 }
