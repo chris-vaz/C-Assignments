@@ -1,0 +1,15 @@
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.csproj.AssemblyReference.cache
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.AssemblyInfoInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.AssemblyInfo.cs
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.csproj.CoreCompileInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\bin\Debug\net6.0\FuelUp.exe
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\bin\Debug\net6.0\FuelUp.deps.json
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\bin\Debug\net6.0\FuelUp.runtimeconfig.json
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\bin\Debug\net6.0\FuelUp.dll
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\bin\Debug\net6.0\FuelUp.pdb
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.dll
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\refint\FuelUp.dll
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.pdb
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\FuelUp.genruntimeconfig.cache
+C:\Users\chris\Desktop\CSharpProjects\FuelUp\obj\Debug\net6.0\ref\FuelUp.dll
