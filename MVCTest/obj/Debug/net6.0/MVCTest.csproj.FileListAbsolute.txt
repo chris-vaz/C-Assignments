@@ -19,3 +19,5 @@ C:\Users\chris\Desktop\CSharpProjects\MVCTest\obj\Debug\net6.0\refint\MVCTest.dl
 C:\Users\chris\Desktop\CSharpProjects\MVCTest\obj\Debug\net6.0\MVCTest.pdb
 C:\Users\chris\Desktop\CSharpProjects\MVCTest\obj\Debug\net6.0\MVCTest.genruntimeconfig.cache
 C:\Users\chris\Desktop\CSharpProjects\MVCTest\obj\Debug\net6.0\ref\MVCTest.dll
+C:\Users\chris\Desktop\CSharpProjects\MVCTest\obj\Debug\net6.0\MVCTest.RazorAssemblyInfo.cache
+C:\Users\chris\Desktop\CSharpProjects\MVCTest\obj\Debug\net6.0\MVCTest.RazorAssemblyInfo.cs

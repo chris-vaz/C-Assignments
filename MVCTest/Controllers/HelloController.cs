@@ -6,11 +6,11 @@ public class HelloController : Controller
     // This will go to "localhost:5XXX"
     [HttpGet]
     [Route("")]
-    public string Index()
+    public ViewResult Index()
     {
-        return "Hello from the index";
+        return View();
     }
-    
+
     // Route declaration Option B
     // This will go to "localhost:5XXX/user/more"
     [HttpGet("user/more")]
@@ -18,15 +18,12 @@ public class HelloController : Controller
     {
         return "Hello user";
     }
-    
-    // Post request example
-    // This will go to "localhost:5XXX/submission"
-    [HttpPost]
-    [Route("submission")]
-    // Don't worry about what the form is doing for now. We'll get to those soon!
-    public string FormSubmission(string formInput)
+
+
+    [HttpGet("elsewhere")]
+
+    public ViewResult ElseWhere()
     {
-    	// Logic for post request here
-        return "I handled a request!";
+        return View("Index");
     }
 }
