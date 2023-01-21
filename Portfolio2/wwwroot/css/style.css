@@ -1,0 +1,14 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+.link-position{
+    display:flex;
+    gap:54px;
+}
+.about-section{
+    display:flex;
+}
+.imagefix{
+    width:300px;
+    height:200px;
+}
