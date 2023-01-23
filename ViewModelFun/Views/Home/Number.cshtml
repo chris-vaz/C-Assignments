@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>View Model Fun Practice Assignment</h1>
+    <a href="/">Message</a>
+    <a>Number</a>
+    <a href="user">User</a>
+    <a href="users">Users</a>
+    <br>
+    @model NumberModel
+    @using ViewModelFun.Models;
+    <h2>Here are some numbers</h2>
+                @foreach (var number in Model.Numbers)
+                {
+                <p>@number</p>
+                }
+</div>

@@ -1,0 +1,18 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>View Model Fun Practice Assignment</h1>
+    <a href="/">Message</a>
+    <a href="number">Number</a>
+    <a href="user">User</a>
+    <a>Users</a>
+    <br>
+        @model List<string>
+    <h2>Here is a list of Users: </h2>
+                @foreach (string name in Model)
+                {
+                <p>@name</p>
+                }
+</div>
