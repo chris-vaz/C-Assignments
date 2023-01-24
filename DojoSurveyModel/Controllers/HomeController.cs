@@ -32,7 +32,12 @@ public class HomeController : Controller
     [HttpPost("process")]
     public IActionResult Process(Survey survey)
     {
-        return View("result",survey);
+        if(ModelState.IsValid){
+            return View("result",survey);
+        }
+        else{
+            return View("Index");
+        }
     }
     [HttpGet("result")]
     public IActionResult Results()
