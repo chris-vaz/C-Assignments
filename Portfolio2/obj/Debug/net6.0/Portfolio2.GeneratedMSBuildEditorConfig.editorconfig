@@ -8,21 +8,21 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Portfolio2
 build_property.RootNamespace = Portfolio2
-build_property.ProjectDir = C:\Users\chris\Desktop\CSharpProjects\Portfolio2\
+build_property.ProjectDir = c:\Users\chris\Desktop\CSharpProjects\Portfolio2\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chris\Desktop\CSharpProjects\Portfolio2
+build_property.MSBuildProjectDirectory = c:\Users\chris\Desktop\CSharpProjects\Portfolio2
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Portfolio2/Views/Home/contact.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Portfolio2/Views/Home/contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Portfolio2/Views/Home/index.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Portfolio2/Views/Home/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxpbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Portfolio2/Views/Home/project.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Portfolio2/Views/Home/project.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxwcm9qZWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
