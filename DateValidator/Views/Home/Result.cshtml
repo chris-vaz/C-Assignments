@@ -1,0 +1,11 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">You came through!</h1>
+    @model Date
+    <h4>Name: @Model.Name</h4>
+    <h4>Birthday (Passed Validation): @Model.Birthday</h4>
+    <a href="/" class="btn btn-warning">Go Back</a>
+</div>
