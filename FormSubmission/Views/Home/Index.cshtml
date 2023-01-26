@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Data Validator Assignment</h1>
+    @model Form
+    <form action="process" method="post">
+        <div>
+            <label asp-for="Name">Name:</label>
+            <input type="text" asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="Email">Email:</label>
+            <input type="text" asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="Date">Date:</label>
+            <input type="datetime-local" asp-for="Date" />
+            <span asp-validation-for="Date"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="Password">Password:</label>
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+        <br>
+        <div>
+            <label asp-for="FavOddNum">Favorite Odd Number:</label>
+            <input type="text" asp-for="FavOddNum" />
+            <span asp-validation-for="FavOddNum"></span>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
