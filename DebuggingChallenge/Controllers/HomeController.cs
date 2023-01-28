@@ -1,4 +1,8 @@
-﻿using System.Diagnostics;
+﻿// SOLUTION PROJECT FOR C# ASSIGNMENT - DEBUGGING CHALLENGE
+// DO NOT COPY FOR ASSIGNMENT SUBMISSION
+// TRY THE ASSIGNMENT BEFORE COMING HERE
+
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DebuggingChallenge.Models;
 
@@ -40,9 +44,11 @@ public class HomeController : Controller
     }
 
     [HttpGet("generator")]
+    
     public IActionResult Generator()
     {
-        if(HttpContext.Session.GetString("Name") == null)
+        // FIX: Incorrect session name "Name" instead of "Username"
+        if(HttpContext.Session.GetString("Username") == null)
         {
             return RedirectToAction("Index");
         }
@@ -50,7 +56,9 @@ public class HomeController : Controller
         {
             GeneratePasscode();
         }
-        return View();
+        // FIX: Name of cshtml and action did not match so could not find the file
+        // Updated the View to list the chstml file
+        return View("Generate");
     }
 
     [HttpPost("reset")]
@@ -64,6 +72,8 @@ public class HomeController : Controller
     [HttpPost("generate/new")]
     public IActionResult GenerateNew()
     {
+        // FIX: GeneratePasscode function never called so we never make a new password
+        GeneratePasscode();
         return RedirectToAction("Generator");
     }
 

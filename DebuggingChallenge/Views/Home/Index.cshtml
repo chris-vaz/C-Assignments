@@ -1,4 +1,4 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Login Page";
 }
 
@@ -6,10 +6,13 @@
 
 <div class="text-center">
     <h1>Welcome! Tell us a little about yourself before we get started.</h1>
-    <form asp-action="MakeUser" asp-controller="Home" method="post" class="col-4 mx-auto p-4">
+    @* FIX: Action name was inconsistent between controller and form *@
+    <form asp-action="CreateUser" asp-controller="Home" method="post" class="col-4 mx-auto p-4">
         <div class="mb-3">
             <label for="Name">What is your name?</label>
             <input asp-for="Name" class="form-control">
+            @* FIX: Missing span for validation errors so you can't see error messages *@
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
         <div class="mb-3">
             <label for="Location">(Optional) Where are you from?</label>

@@ -4,7 +4,8 @@ namespace DebuggingChallenge.Models;
 
 public class User
 {
-    [Required]
+    //Specified the validation message stating that the name is required if field is empty
+    [Required(ErrorMessage = "Name is required!")]
     public string Name {get;set;}
 
     public string? Location {get;set;}
