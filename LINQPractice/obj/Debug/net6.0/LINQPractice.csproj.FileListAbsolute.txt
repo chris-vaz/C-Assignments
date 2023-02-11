@@ -1,0 +1,15 @@
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\bin\Debug\net6.0\LINQPractice.exe
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\bin\Debug\net6.0\LINQPractice.deps.json
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\bin\Debug\net6.0\LINQPractice.runtimeconfig.json
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\bin\Debug\net6.0\LINQPractice.dll
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\bin\Debug\net6.0\LINQPractice.pdb
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.csproj.AssemblyReference.cache
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.AssemblyInfoInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.AssemblyInfo.cs
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.csproj.CoreCompileInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.dll
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\refint\LINQPractice.dll
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.pdb
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\LINQPractice.genruntimeconfig.cache
+C:\Users\chris\Desktop\CSharpProjects\LINQPractice\obj\Debug\net6.0\ref\LINQPractice.dll
