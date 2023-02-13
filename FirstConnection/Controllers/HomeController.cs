@@ -11,7 +11,7 @@ public class HomeController : Controller
     private MyContext _context;
     // Here we can "inject" our context service into the constructor 
     // The "logger" was something that was already in our code, we're just adding around it   
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, MyContext context)
     {
         _logger = logger;
         // When our HomeController is instantiated, it will fill in _context with context
