@@ -24,20 +24,20 @@ PrintEach(stratovolcanoEruptions, "Stratovolcano eruptions.");
 
 // 1. Use LINQ to find the first eruption that is in Chile and print the result.
 
-Alternate -
-IEnumerable<Eruption> findFirstEruptionChile = eruptions.FirstOrDefault(c => c.Location == "Chile");
+// Alternate -
+// IEnumerable<Eruption> findFirstEruptionChile = eruptions.FirstOrDefault(c => c.Location == "Chile");
 
-Eruption findFirstEruptionChile = eruptions.FirstOrDefault(c => c.Location == "Chile");
-if (findFirstEruptionChile != null)
-{
-    Console.WriteLine(findFirstEruptionChile.ToString()); 
-    // Can also output like this^
-}
-else
-{
-    Console.WriteLine("No eruption found in Chile");
-}
-PrintEach(findFirstEruptionChile,"First Eruption that is in Chile: ");
+// Eruption findFirstEruptionChile = eruptions.FirstOrDefault(c => c.Location == "Chile");
+// if (findFirstEruptionChile != null)
+// {
+//     Console.WriteLine(findFirstEruptionChile.ToString()); 
+//     // Can also output like this^
+// }
+// else
+// {
+//     Console.WriteLine("No eruption found in Chile");
+// }
+// PrintEach(findFirstEruptionChile,"First Eruption that is in Chile: ");
 
 // 2. Find the first eruption from the "Hawaiian Is" location and print it. 
 // If none is found, print "No Hawaiian Is Eruption found."
