@@ -70,6 +70,15 @@ public class HomeController : Controller
         }
     }
 
+    [HttpPost("dishes/{dishId}/delete")]
+    public IActionResult DeleteDish(int dishId)
+    {
+        Dish? DishtoDelete = _context.Dishes.SingleOrDefault(a => a.DishId == dishId);
+        _context.Dishes.Remove(DishtoDelete);
+        _context.SaveChanges();
+        return RedirectToAction("");
+    }
+
     [HttpGet("dishes/{id}")]
     public IActionResult ShowDish(int id)
     {

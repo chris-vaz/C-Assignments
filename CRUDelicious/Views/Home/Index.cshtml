@@ -11,5 +11,8 @@
     @foreach (Dish d in ViewBag.AllDishes)
     {
         <p><a href="dishes/@d.DishId">@d.Name</a> by @d.Chef</p>
+        <form asp-action="DeleteDish" asp-controller="Home" asp-route-dishId="@d.DishId" method="post">
+            <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
     }
 </div>
