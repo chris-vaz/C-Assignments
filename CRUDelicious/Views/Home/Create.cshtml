@@ -20,20 +20,20 @@
         <br>
         <div>
             <span asp-validation-for="Name" class="text-danger"></span>
-            <label for="Name">Name of Dish</label>
-            <input type="text" name="Name">
+            <label asp-for="Name">Name of Dish</label>
+            <input asp-for="Name" name="Name">
         </div>
         <br>
         <div>
             <span asp-validation-for="Calories" class="text-danger"></span>
             <label asp-for="Calories"># of Calories</label>
-            <input type="number" name="Calories">
+            <input asp-for="Calories" name="Calories">
         </div>
         <br>
         <div>
             <span asp-validation-for="Tastiness" class="text-danger"></span>
-            <label for="Tastiness">Tastiness</label>
-            <input type="number" name="Tastiness">
+            <label asp-for="Tastiness">Tastiness</label>
+            <input asp-for="Calories" name="Tastiness">
         </div>
         <br>
         <div>

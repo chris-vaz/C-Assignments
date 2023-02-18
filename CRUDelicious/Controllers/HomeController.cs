@@ -66,7 +66,7 @@ public class HomeController : Controller
         else
         {
             // Handle unsuccessful validations
-            return View("~/Views/Home/Create.cshtml");
+            return View("~/Views/Home/Create.cshtml",newDish);
         }
     }
 
