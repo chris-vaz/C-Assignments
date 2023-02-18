@@ -8,7 +8,7 @@
 </head>
 <body>
     @model Dish
-    <h1>Edit Dish Details</h1>
+    <h1>Edit @Model.Name Details</h1>
     <form asp-action="UpdateDish" method="post" asp-controller="Home" asp-route-dishId="@Model.DishId">
         <div>
             <span asp-validation-for="Chef" class="text-danger"></span>
@@ -40,7 +40,7 @@
             <textarea asp-for="Description"></textarea>
         </div>
         <br>
-        <input type="submit" value="Apply Changes">
+        <input type="submit" value="Edit Dish">
     </form>
 </body>
 </html>
