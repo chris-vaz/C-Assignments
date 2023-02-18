@@ -37,10 +37,45 @@ public class HomeController : Controller
         return View("Create");
     }
 
+    [HttpGet("dishes/{dishId}/edit")]
+    public IActionResult EditDish(int dishId)
+    {
+        Dish? DishToEdit = _context.Dishes.FirstOrDefault(f => f.DishId == dishId);
+        return View("EditDish", DishToEdit);
+    }
+
     public IActionResult Privacy()
     {
         return View();
     }
+
+
+    [HttpPost("dishes/{dishId}/update")]
+    public IActionResult UpdateDish(int dishId, Dish UpdatedDish)
+    {
+        Dish? DishToUpdate = _context.Dishes.FirstOrDefault(a => a.DishId == dishId);
+        if (DishToUpdate == null)
+        {
+            return RedirectToAction("Index");
+        }
+
+        if (ModelState.IsValid)
+        {
+            DishToUpdate.Chef = UpdatedDish.Chef;
+            DishToUpdate.Name = UpdatedDish.Name;
+            DishToUpdate.Tastiness = UpdatedDish.Tastiness;
+            DishToUpdate.Calories = UpdatedDish.Calories;
+            DishToUpdate.Description = UpdatedDish.Description;
+            DishToUpdate.UpdatedAt = DateTime.Now;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            return View("EditDish", DishToUpdate);
+        }
+    }
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
@@ -66,7 +101,7 @@ public class HomeController : Controller
         else
         {
             // Handle unsuccessful validations
-            return View("~/Views/Home/Create.cshtml",newDish);
+            return View("~/Views/Home/Create.cshtml", newDish);
         }
     }
 

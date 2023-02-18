@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create a new Dish</title>
+    <title>Edit Dish Details - CRUDelicious</title>
 </head>
-
 <body>
     @model Dish
-    <h1>Add a new Dish!</h1>
-    <form asp-action="CreateDish" method="post" asp-controller="Home">
+    <h1>Edit Dish Details</h1>
+    <form asp-action="UpdateDish" method="post" asp-controller="Home" asp-route-dishId="@Model.DishId">
         <div>
             <span asp-validation-for="Chef" class="text-danger"></span>
             <label asp-for="Chef">Chef's Name</label>
@@ -33,7 +31,7 @@
         <div>
             <span asp-validation-for="Tastiness" class="text-danger"></span>
             <label asp-for="Tastiness">Tastiness</label>
-            <input asp-for="Calories" name="Tastiness">
+            <input asp-for="Tastiness" asp-for="Tastiness">
         </div>
         <br>
         <div>
@@ -42,8 +40,7 @@
             <textarea asp-for="Description"></textarea>
         </div>
         <br>
-        <input type="submit" value="Add Dish">
+        <input type="submit" value="Apply Changes">
     </form>
 </body>
-
 </html>
