@@ -1,7 +1,7 @@
 #pragma warning disable CS8618
 
 using Microsoft.EntityFrameworkCore;
-namespace Login_and_Reg.models;
+namespace Login_and_Reg.Models;
 
 public class MyContext : DbContext
 {

@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Login_and_Reg.models;
+using Login_and_Reg.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 

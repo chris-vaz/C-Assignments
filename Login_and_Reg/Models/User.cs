@@ -1,7 +1,7 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace Login_and_Reg.models;
+namespace Login_and_Reg.Models;
 
 public class User
 {

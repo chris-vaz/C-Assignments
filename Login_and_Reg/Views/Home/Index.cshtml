@@ -4,4 +4,38 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
+    <div class="text-center d-flex justify-content-around">
+        <div class="flex-1 m-3">
+            @model User
+            <h2>Register</h2>
+            <form asp-action="CreateUser" asp-controller="Home" method="post">
+                <div>
+                    <label asp-for="Username">Username: </label>
+                    <input asp-for="Username" class="form-control">
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Email">Email: </label>
+                    <input asp-for="Email" class="form-control">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Password">Password: </label>
+                    <input asp-for="Password" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <label asp-for="Confirm">Confirm Password: </label>
+                    <input asp-for="Confirm" class="form-control">
+                    <span asp-validation-for="Confirm" class="text-danger"></span>
+                </div>
+                <div>
+                    <input type="submit" value="Register" class="btn btn-info mt-4">
+                </div>
+            </form>
+        </div>
+        <div class="flex-1 m-3">
+            <h2>Login</h2>
+        </div>
+    </div>
 </div>

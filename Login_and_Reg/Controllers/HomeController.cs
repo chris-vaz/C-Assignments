@@ -6,10 +6,12 @@ namespace Login_and_Reg.Controllers;
 
 public class HomeController : Controller
 {
+    private MyContext _context;
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, MyContext context)
     {
+        _context = context;
         _logger = logger;
     }
 
