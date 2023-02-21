@@ -24,3 +24,12 @@ C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\obj\Debug\net6.0\refint\Logi
 C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\obj\Debug\net6.0\Login_and_Reg.pdb
 C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\obj\Debug\net6.0\Login_and_Reg.genruntimeconfig.cache
 C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\obj\Debug\net6.0\ref\Login_and_Reg.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Humanizer.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\chris\Desktop\CSharpProjects\Login_and_Reg\obj\Debug\net6.0\Login_and_Reg.csproj.CopyComplete

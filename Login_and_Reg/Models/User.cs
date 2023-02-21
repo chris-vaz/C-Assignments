@@ -1,23 +1,32 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 namespace Login_and_Reg.models;
-public class Login
-{
-    // [Key]    
-    // public int UserId { get; set; }
 
+public class User
+{
+    [Key]
+    public int UserId { get; set; }
+    [Required]
+    [MinLength(9, ErrorMessage = "Username must be atleast 9 characters")]
+    public string Username { get; set; }
     [Required]
     [EmailAddress]
-    [UniqueEmail]
     public string Email { get; set; }
-
     [Required]
+    [DataType(DataType.Password)]
+    [MinLength(8, ErrorMessage = "Password must be atleast 8 characters")]
     public string Password { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
-}
 
+    [NotMapped]
+    [DataType(DataType.Password)]
+    [Compare("Password")]
+    [Display(Name = "Confirm Password")]
+    public string Confirm { get; set; }
+}
 
 public class UniqueEmailAttribute : ValidationAttribute
 {
