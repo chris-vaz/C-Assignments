@@ -11,7 +11,9 @@
 <body>
     <div class="text-center">
         <h1 class="display-4">Success</h1>
-        <a href="/">Logout</a>
+        <form asp-action="Logout" asp-controller="Home" method="post">
+            <input type="submit" value="Logout" class="btn btn-danger">
+        </form>
     </div>
 </body>
 

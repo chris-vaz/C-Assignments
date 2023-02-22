@@ -41,6 +41,49 @@ public class HomeController : Controller
         }
     }
 
+
+    [HttpPost("users/login")]
+    public IActionResult LoginUser(LoginUser loguser)
+    {
+        if (ModelState.IsValid)
+        {
+            // Look up our user in the database
+            User? userInDb = _context.Users.FirstOrDefault(u => u.Email == loguser.LEmail);
+            // Verifying if user exists
+            if (userInDb == null)
+            {
+                ModelState.AddModelError("Email", "Invalid Email/Password");
+                return View("Index");
+            }
+            // Verify the password matches what's in the database
+            PasswordHasher<LoginUser> hasher = new PasswordHasher<LoginUser>();
+            var result = hasher.VerifyHashedPassword(loguser, userInDb.Password, loguser.LPassword);
+            if (result == 0)
+            {
+                // A failure, We did not use the right password
+                ModelState.AddModelError("Email", "Invalid Email/Password");
+                return View("Index");
+            }
+            else
+            {
+                // Set session and head to Success
+                HttpContext.Session.SetInt32("UserId", userInDb.UserId);
+                return RedirectToAction("Success");
+            }
+        }
+        else
+        {
+            return View("Index");
+        }
+    }
+
+    [HttpPost("logout")]
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("Index");
+    }
+
     [SessionCheck]
     [HttpGet(("success"))]
     public IActionResult Success()
