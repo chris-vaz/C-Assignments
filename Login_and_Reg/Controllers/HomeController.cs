@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Login_and_Reg.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Login_and_Reg.Controllers;
 
@@ -26,6 +28,11 @@ public class HomeController : Controller
     {
         if (ModelState.IsValid)
         {
+            PasswordHasher<User> Hasher = new PasswordHasher<User>();
+            newUser.Password = Hasher.HashPassword(newUser, newUser.Password);
+            _context.Add(newUser);
+            _context.SaveChanges();
+            HttpContext.Session.SetInt32("UserID", newUser.UserId);
             return RedirectToAction("Success");
         }
         else
@@ -34,8 +41,10 @@ public class HomeController : Controller
         }
     }
 
+    [SessionCheck]
     [HttpGet(("success"))]
-    public IActionResult Success(){
+    public IActionResult Success()
+    {
         return View();
     }
 
@@ -48,5 +57,17 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+}
+
+public class SessionCheckAttribute : ActionFilterAttribute
+{
+    public override void OnActionExecuting(ActionExecutingContext context)
+    {
+        int? userId = context.HttpContext.Session.GetInt32("UserId");
+        if (userId == null)
+        {
+            context.Result = new RedirectToActionResult("Index", "Home", null);
+        }
     }
 }
