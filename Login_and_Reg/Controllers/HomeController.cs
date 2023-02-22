@@ -21,6 +21,24 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost("users/create")]
+    public IActionResult CreateUser(User newUser)
+    {
+        if (ModelState.IsValid)
+        {
+            return RedirectToAction("Success");
+        }
+        else
+        {
+            return View("Index");
+        }
+    }
+
+    [HttpGet(("success"))]
+    public IActionResult Success(){
+        return View();
+    }
+
     public IActionResult Privacy()
     {
         return View();
