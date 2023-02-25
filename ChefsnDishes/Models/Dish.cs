@@ -5,12 +5,16 @@ public class Dish
 {
     [Key]
     public int DishId { get; set; }
-    [Required(ErrorMessage = "First Name is required")]
+    [Required(ErrorMessage = "Name of the dish is required")]
     public string Name { get; set; }
-    public string Calories { get; set; }
+    [Required(ErrorMessage = "Calories is required")]
+    [Range(1, int.MaxValue, ErrorMessage = "Calories must be greater than 0")]
+    public int Calories { get; set; }
+    [Required(ErrorMessage = "Name of the Chef is required")]
     public string ChefName { get; set; }
-    public string Tastiness { get; set; }
-    public DateOnly dob { get; set; }
+    [Required(ErrorMessage = "Level of tastiness is required")]
+    [Range(1, 5, ErrorMessage = "Tastiness must be between 1 and 5")]
+    public int Tastiness { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
