@@ -58,7 +58,36 @@ public class HomeController : Controller
         return View("AddChef");
     }
 
+    [HttpGet("/dish/create")]
+    public IActionResult DishForm()
+    {
+        return View("AddDish");
+    }
 
+[HttpPost("/dish/create")]
+    public IActionResult CreateDish(Dish newDish)
+
+    {
+        var results = new List<ValidationResult>();
+        var context = new ValidationContext(newDish);
+        if (!Validator.TryValidateObject(newDish, context, results, true))
+        {
+            foreach (var error in results)
+            {
+                ModelState.AddModelError(error.MemberNames.First(), error.ErrorMessage);
+            }
+        }
+        if (ModelState.IsValid)
+        {
+            _context.Add(newDish);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            return View("AddDish");
+        }
+    }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
