@@ -9,42 +9,50 @@ public class Chef
     public string FirstName { get; set; }
     [Required(ErrorMessage = "Last Name is required")]
     public string LastName { get; set; }
-    [Required(ErrorMessage = "Date of Birth is required")]
+
     [DataType(DataType.Date)]
-    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-    public DateTime dob { get; set; }
+    [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true, NullDisplayText = "dob required")]
+    [Required(ErrorMessage = "DOB required")]
+    [MinimumAge(18, ErrorMessage = "Chef must be at least 18 years old.")]
+    public DateTime? dob { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    // Our navigation property to track the many Dishes our chef has made
+    // Be sure to include the part about instantiating a new List!
+    public List<Dish> allDishes { get; set; } = new List<Dish>();
 
-
-
-    public int Age
+    // Adding custom minimum Age attribute
+    public class MinimumAgeAttribute : ValidationAttribute
     {
-        get
-        {
-            DateTime now = DateTime.Now;
-            int age = now.Year - dob.Year;
+        private int _minimumAge;
 
-            if (now.Month < dob.Month || (now.Month == dob.Month && now.Day < dob.Day))
+        public MinimumAgeAttribute(int minimumAge)
+        {
+            _minimumAge = minimumAge;
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (value == null)
             {
-                age--;
+                return new ValidationResult(ErrorMessage ?? $"DOB required");
             }
 
-            return age;
-        }
-    }
-
-    public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-    {
-        if (dob > DateTime.Now)
-        {
-            yield return new ValidationResult("Date of Birth must be in the past.", new[] { "dob" });
-        }
-
-        if (Age < 18)
-        {
-            yield return new ValidationResult("Chef must be at least 18 years old.", new[] { "dob" });
+            DateTime dateOfBirth;
+            if (DateTime.TryParse(value.ToString(), out dateOfBirth))
+            {
+                var age = DateTime.Today.Year - dateOfBirth.Year;
+                if (dateOfBirth > DateTime.Today.AddYears(-age))
+                {
+                    age--;
+                }
+                if (age >= _minimumAge)
+                {
+                    return ValidationResult.Success;
+                }
+            }
+            return new ValidationResult(ErrorMessage ?? $"Minimum age of {_minimumAge} years required.");
         }
     }
 }
