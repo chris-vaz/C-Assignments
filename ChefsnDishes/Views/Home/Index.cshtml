@@ -1,7 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 <div class="text-center">
     <h1 class="display-4">Chefs N Dishes</h1>
     <p><b>Chef </b>|<a> Dishes </a>|<a href="/chef/create"> Add a Chef </a>|<a href="/dish/create"> Add a Dish </a></p>
@@ -19,7 +18,7 @@
             <tr>
                 <td>@c.FirstName @c.LastName</td>
                 <td>@(c.dob.HasValue ? (DateTime.Today.Year - c.dob.Value.Year).ToString() : "")</td>
-                <td>TBD</td>
+                <td>0</td>
             </tr>
         }
 

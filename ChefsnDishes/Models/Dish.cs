@@ -5,6 +5,7 @@ public class Dish
 {
     [Key]
     public int DishId { get; set; }
+    public int ChefId { get; set; }
     [Required(ErrorMessage = "Name of the dish is required")]
     public string Name { get; set; }
     [Required(ErrorMessage = "Calories is required")]

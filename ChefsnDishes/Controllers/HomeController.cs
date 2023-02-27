@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ChefsnDishes.Models;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChefsnDishes.Controllers;
 
@@ -18,7 +19,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewBag.AllChefs = _context.Chefs.ToList();
+        ViewBag.AllChefs = _context.Chefs.Include(dishes => dishes.allDishes).ToList();
         return View();
     }
 
@@ -31,15 +32,6 @@ public class HomeController : Controller
     public IActionResult CreateChef(Chef newChef)
 
     {
-        var results = new List<ValidationResult>();
-        var context = new ValidationContext(newChef);
-        if (!Validator.TryValidateObject(newChef, context, results, true))
-        {
-            foreach (var error in results)
-            {
-                ModelState.AddModelError(error.MemberNames.First(), error.ErrorMessage);
-            }
-        }
         if (ModelState.IsValid)
         {
             _context.Add(newChef);
@@ -48,6 +40,9 @@ public class HomeController : Controller
         }
         else
         {
+            // MyViewModel MyModel = new MyViewModel{
+            //     AllChefs=_context.Chefs.ToList()
+            // };
             return View("AddChef");
         }
     }
@@ -59,35 +54,33 @@ public class HomeController : Controller
     }
 
     [HttpGet("/dish/create")]
-    public IActionResult DishForm()
+    public IActionResult AddDish()
     {
+        // ViewBag.AllDishes = _context.Dishes.ToList();
+        ViewBag.AllChefs = _context.Chefs.ToList();
         return View("AddDish");
     }
 
-[HttpPost("/dish/create")]
-    public IActionResult CreateDish(Dish newDish)
+    // [HttpPost("/dish/create")]
+    // public IActionResult CreateDish(Dish newDish)
 
-    {
-        var results = new List<ValidationResult>();
-        var context = new ValidationContext(newDish);
-        if (!Validator.TryValidateObject(newDish, context, results, true))
-        {
-            foreach (var error in results)
-            {
-                ModelState.AddModelError(error.MemberNames.First(), error.ErrorMessage);
-            }
-        }
-        if (ModelState.IsValid)
-        {
-            _context.Add(newDish);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
-        }
-        else
-        {
-            return View("AddDish");
-        }
-    }
+    // {
+    //     if (ModelState.IsValid)
+    //     {
+    //         _context.Add(newDish);
+    //         _context.SaveChanges();
+    //         return RedirectToAction("Index");
+    //     }
+    //     else
+    //     {
+    //         MyViewModel MyModel = new MyViewModel
+    //         {
+    //             AllChefs = _context.Chefs.ToList()
+    //         };
+    //         ViewBag.AllDishes = _context.Dishes.ToList();
+    //         return View("AddDish");
+    //     }
+    // }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
