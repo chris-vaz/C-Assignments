@@ -56,7 +56,7 @@ public class HomeController : Controller
     [HttpGet("/dishes")]
     public IActionResult AllDishes()
     {
-        ViewBag.AllDishes = _context.Dishes.ToList();
+        ViewBag.AllDishes = _context.Dishes.Include(c => c.Cook).ToList();
         return View("Dishes");
     }
 
@@ -64,7 +64,7 @@ public class HomeController : Controller
     public IActionResult AddDish()
     {
         // ViewBag.AllDishes = _context.Dishes.ToList();
-        ViewBag.AllChefs = _context.Chefs.ToList();
+        ViewBag.AllChefs = _context.Chefs.Include(d => d.allDishes).ToList();
         return View("AddDish");
     }
 

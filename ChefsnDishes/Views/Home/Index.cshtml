@@ -19,7 +19,7 @@
             <tr>
                 <td>@c.FirstName @c.LastName</td>
                 <td>@(c.dob.HasValue ? (DateTime.Today.Year - c.dob.Value.Year).ToString() : "")</td>
-                <td>0</td>
+                <td>@c.allDishes.Count</td>
             </tr>
         }
 
