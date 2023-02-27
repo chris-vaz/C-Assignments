@@ -4,9 +4,10 @@
 
 <div class="text-center">
     <h1 class="display-4">Chefs N Dishes</h1>
-    <p><b>Chef </b>|<a> Dishes </a>|<a> Add a Chef </a>|<a> Add a Dish </a></p>
+    <p><a href="/">Chef </a>|<b> Dishes </b>|<a href="/chef/create"> Add a Chef </a>|<a href="/dish/create"> Add a Dish </a></p>
     <hr>
     <h2 class="display-5">Yum! Check out our tasty dishes</h2>
+    <hr>
     <table class="mt-4 table">
         <tr>
             <th>Name</th>
@@ -14,12 +15,15 @@
             <th>Tastiness</th>
             <th>Calories</th>
         </tr>
-        <tr>
-            <th>Name</th>
-            <th>Chef</th>
-            <th>Tastiness</th>
-            <th>Calories</th>
-        </tr>
+        @foreach (Dish d in ViewBag.AllDishes)
+        {
+            <tr>
+                <td>@d.Name</td>
+                <td>@d.ChefId</td>
+                <td>@d.Tastiness</td>
+                <td>@d.Calories</td>
+            </tr>
+        }
 
     </table>
 </div>

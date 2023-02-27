@@ -53,6 +53,13 @@ public class HomeController : Controller
         return View("AddChef");
     }
 
+    [HttpGet("/dishes")]
+    public IActionResult AllDishes()
+    {
+        ViewBag.AllDishes = _context.Dishes.ToList();
+        return View("Dishes");
+    }
+
     [HttpGet("/dish/create")]
     public IActionResult AddDish()
     {
@@ -61,26 +68,27 @@ public class HomeController : Controller
         return View("AddDish");
     }
 
-    // [HttpPost("/dish/create")]
-    // public IActionResult CreateDish(Dish newDish)
+    [HttpPost("/dish/create")]
+    public IActionResult CreateDish(Dish newDish)
 
-    // {
-    //     if (ModelState.IsValid)
-    //     {
-    //         _context.Add(newDish);
-    //         _context.SaveChanges();
-    //         return RedirectToAction("Index");
-    //     }
-    //     else
-    //     {
-    //         MyViewModel MyModel = new MyViewModel
-    //         {
-    //             AllChefs = _context.Chefs.ToList()
-    //         };
-    //         ViewBag.AllDishes = _context.Dishes.ToList();
-    //         return View("AddDish");
-    //     }
-    // }
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Add(newDish);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            // MyViewModel MyModel = new MyViewModel
+            // {
+            //     AllChefs = _context.Chefs.ToList()
+            // };
+            // ViewBag.AllDishes = _context.Dishes.ToList();
+            ViewBag.AllChefs = _context.Chefs.ToList();
+            return View("AddDish");
+        }
+    }
 
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

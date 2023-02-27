@@ -3,5 +3,10 @@
 }
 @model MyViewModel
 <div class="text-center">
-@await Html.PartialAsync("_AddChef")
+    <h1 class="display-4">Chefs N Dishes</h1>
+    <p><a href="/">Chef </b>|<a href="/dishes"> Dishes </a>|<b> Add a Chef </b>|<a href="/dish/create"> Add a Dish </a></p>
+    <hr>
+    <h2 class="display-5">Add a Chef</h2>
+    <hr>
+    @await Html.PartialAsync("_AddChef")
 </div>
