@@ -3,6 +3,36 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Products and Categories</h1>
+    <hr>
+    <p><b>Products</b> | <a href="/categories">Categories</a></p>
+    <hr>
+    <section>
+        <div>
+            @model Product
+            <form asp-action="CreateProduct" method="post" asp-controller="Home">
+                <div class="mb-3">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <label asp-for="Name">Enter Product Name: </label>
+                    <input asp-for="Name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                    <label asp-for="Description">Enter Product Description: </label>
+                    <input asp-for="Description" class="form-control">
+                </div>
+                <div class="mb-1">
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                    <label asp-for="Price">Enter Product Price: </label>
+                    <input asp-for="Price" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Add Product" class="btn btn-primary mt-5">
+                </div>
+            </form>
+        </div>
+        <div>
+            <h3 class="display-5 mt-5">List of all Products: </h3>
+        </div>
+    </section>
 </div>

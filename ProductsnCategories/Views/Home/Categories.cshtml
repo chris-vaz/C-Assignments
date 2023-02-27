@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Products and Categories</h1>
+    <hr>
+    <p><a href="/">Products</a> | <b>Categories</b></p>
+    <hr>
+    <section>
+        <div>
+            @model Category
+            <form asp-action="CreateCategory" method="post" asp-controller="Home">
+                <div class="mb-3">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    <label asp-for="Name">Enter Product Name: </label>
+                    <input asp-for="Name" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="Add Category" class="btn btn-primary mt-5">
+                </div>
+            </form>
+        </div>
+        <div>
+            <h3 class="display-5 mt-5">List of all Categories: </h3>
+        </div>
+    </section>
+</div>
