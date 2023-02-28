@@ -7,10 +7,11 @@
     <hr>
     <p><b>Products</b> | <a href="/categories">Categories</a></p>
     <hr>
-    <section>
+    <section class="d-flex justify-content-around">
         <div>
+            <h1 class="display-5 mt-2">Add new Product</h1>
             @model Product
-            <form asp-action="CreateProduct" method="post" asp-controller="Home">
+            <form asp-action="CreateProduct" method="post" asp-controller="Home" class="mt-5">
                 <div class="mb-3">
                     <span asp-validation-for="Name" class="text-danger"></span>
                     <label asp-for="Name">Enter Product Name: </label>
@@ -32,7 +33,11 @@
             </form>
         </div>
         <div>
-            <h3 class="display-5 mt-5">List of all Products: </h3>
+            <h3 class="display-5 mt-2">List of all Products: </h3>
+            @foreach (Product p in ViewBag.AllProducts)
+            {
+                <p><a href="/products/@p.ProductId">@p.Name</a></p>
+            }
         </div>
     </section>
 </div>

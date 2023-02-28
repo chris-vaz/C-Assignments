@@ -14,7 +14,7 @@ public class Product
     // [Required(ErrorMessage = "Name of the Chef is required")]
     // public string ChefName { get; set; }
     [Required(ErrorMessage = "Price of the product is required")]
-    public float Price { get; set; }
+    public float? Price { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;

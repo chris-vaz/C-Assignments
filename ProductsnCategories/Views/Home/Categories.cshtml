@@ -7,13 +7,14 @@
     <hr>
     <p><a href="/">Products</a> | <b>Categories</b></p>
     <hr>
-    <section>
+    <section class="d-flex justify-content-around">
         <div>
+            <h1 class="display-5 mt-2">Add new Category</h1>
             @model Category
-            <form asp-action="CreateCategory" method="post" asp-controller="Home">
+            <form asp-action="CreateCategory" method="post" asp-controller="Home" class="mt-5">
                 <div class="mb-3">
                     <span asp-validation-for="Name" class="text-danger"></span>
-                    <label asp-for="Name">Enter Product Name: </label>
+                    <label asp-for="Name">Enter Category Name: </label>
                     <input asp-for="Name" class="form-control">
                 </div>
                 <div class="mb-3">
@@ -22,7 +23,11 @@
             </form>
         </div>
         <div>
-            <h3 class="display-5 mt-5">List of all Categories: </h3>
+            <h3 class="display-5 mt-2">List of all Categories: </h3>
+            @foreach (Category c in ViewBag.AllCategories)
+            {
+                    <p><a href="/categories/@c.CategoryId">@c.Name</a></p>
+            }
         </div>
     </section>
 </div>

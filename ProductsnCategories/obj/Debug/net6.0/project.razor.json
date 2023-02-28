@@ -18384,8 +18384,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Desktop\\CSharpProjects\\ProductsnCategories\\Views\\Home\\OneCategory.cshtml",
+      "TargetPath": "Views\\Home\\OneCategory.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Desktop\\CSharpProjects\\ProductsnCategories\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Desktop\\CSharpProjects\\ProductsnCategories\\Views\\Home\\OneProduct.cshtml",
+      "TargetPath": "Views\\Home\\OneProduct.cshtml",
       "FileKind": "mvc"
     },
     {
