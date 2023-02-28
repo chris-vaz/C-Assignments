@@ -20,5 +20,5 @@ public class Product
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
     // Our Person class also needs a reference to Subscriptions
     // and contains NO reference to Magazines  
-    public List<Association> Associations { get; set; } = new List<Association>();
+    public List<Association> PAssociations { get; set; } = new List<Association>();
 }

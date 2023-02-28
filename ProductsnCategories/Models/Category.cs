@@ -13,5 +13,5 @@ public class Category
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
     // Our Person class also needs a reference to Subscriptions
     // and contains NO reference to Magazines  
-    public List<Association> Associations { get; set; } = new List<Association>();
+    public List<Association> CAssociations { get; set; } = new List<Association>();
 }
