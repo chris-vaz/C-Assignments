@@ -18,12 +18,13 @@
         <div>
             <h1 class="display-6 mt-3">Add Product</h1>
             <form asp-action="CreateAssociation" method="post" asp-controller="Home">
-                <select asp-for="@Model.Product.ProductId">
+                <select asp-for="@Model.Product.ProductId" class="form-select mb-4">
                     @foreach (Product p in Model.AllProducts)
                     {
                         <option value="@p.ProductId">@p.Name</option>
                     }
                 </select>
+                <input asp-for="@Model.Category.CategoryId" type="hidden">
                 <input type="submit" value="Add" class="btn btn-primary">
             </form>
         </div>

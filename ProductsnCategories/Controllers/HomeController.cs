@@ -57,7 +57,13 @@ public class HomeController : Controller
     public IActionResult OneProduct(int id)
     {
         Product? onePro = _context.Products.FirstOrDefault(c => c.ProductId == id);
-        return View("OneProduct", onePro);
+        List<Category> allCategories = _context.Categories.ToList();
+        MyViewModel AllInfop = new MyViewModel
+        {
+            Product = onePro,
+            AllCategories = allCategories
+        };
+        return View("OneProduct", AllInfop);
     }
 
     [HttpPost("/product/create")]
@@ -77,11 +83,27 @@ public class HomeController : Controller
     }
 
     [HttpPost("/products/addCategory")]
-    public IActionResult CreateAssociation(Association newAssociation, int categoryId)
+    public IActionResult CreateAssociation(Association newAssociation)
     {
         if (ModelState.IsValid)
         {
-            newAssociation.CategoryId = categoryId;
+            // newAssociation.CategoryId = categoryId;
+            _context.Add(newAssociation);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        else
+        {
+            return View("Privacy");
+        }
+    }
+
+    [HttpPost("/categories/addProduct")]
+    public IActionResult CreateAssociationP(Association newAssociation)
+    {
+        if (ModelState.IsValid)
+        {
+            // newAssociation.CategoryId = categoryId;
             _context.Add(newAssociation);
             _context.SaveChanges();
             return RedirectToAction("Index");

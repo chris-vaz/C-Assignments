@@ -1,2 +1,32 @@
-@model Product
-<h1>Product Name - @Model.Name</h1>
+<div class="text-center">
+    <h1 class="display-4">Products and Categories</h1>
+    <hr>
+    <p><a href="/">Products</a> | <a href="/categories">Categories</a></p>
+    <hr>
+    @model MyViewModel
+    <h1 class="display-4">@Model.Product.Name</h1>
+    <section class="d-flex justify-content-around">
+        <div>
+            <h1 class="display-6 mt-3">Category</h1>
+            <ul>
+                @foreach (Association c in @Model.Product.PAssociations)
+                {
+                    <li>@c.Category.Name</li>
+                }
+            </ul>
+        </div>
+        <div>
+            <h1 class="display-6 mt-3">Add Category</h1>
+            <form asp-action="CreateAssociationP" method="post" asp-controller="Home">
+                <select asp-for="@Model.Category.CategoryId" class="form-select mb-4">
+                    @foreach (Category p in Model.AllCategories)
+                    {
+                        <option value="@p.CategoryId">@p.Name</option>
+                    }
+                </select>
+                <input asp-for="@Model.Product.ProductId" type="hidden">
+                <input type="submit" value="Add" class="btn btn-primary">
+            </form>
+        </div>
+    </section>
+</div>
