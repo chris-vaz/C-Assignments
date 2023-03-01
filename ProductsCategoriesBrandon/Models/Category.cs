@@ -1,6 +1,6 @@
 #pragma warning disable CS8618
 using System.ComponentModel.DataAnnotations;
-namespace ProductsAndCategories.Models;
+namespace ProductsCategoriesBrandon.Models;
 
 public class Category
 {

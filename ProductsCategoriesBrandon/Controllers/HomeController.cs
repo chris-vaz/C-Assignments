@@ -1,15 +1,15 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using ProductsAndCategories.Models;
+using ProductsCategoriesBrandon.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ProductsAndCategories.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
 
     private MyContext _context;
+    private readonly ILogger<HomeController> _logger;
 
     public HomeController(ILogger<HomeController> logger, MyContext context)
     {

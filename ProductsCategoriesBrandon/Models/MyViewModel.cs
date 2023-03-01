@@ -1,5 +1,5 @@
 #pragma warning disable CS8618
-namespace ProductsAndCategories.Models;
+namespace ProductsCategoriesBrandon.Models;
 public class MyViewModel
 {    
     public Category Category {get;set;}    
