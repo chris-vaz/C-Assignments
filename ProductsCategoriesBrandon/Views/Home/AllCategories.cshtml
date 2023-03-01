@@ -1,0 +1,26 @@
+@model MyViewModel
+
+<div class="flex justify-around w-3/4">
+    <form asp-action="CreateCategory">
+        <h1 class="text-lg font-bold">All Categories</h1>
+        <span></span>
+        <div class="flex justify-between">
+            <label asp-for="@Model.Category.Name">Name:</label>
+            <input type="text" asp-for="@Model.Category.Name" class="border-2 rounded border-slate-300" name="Name">
+        </div>
+        <input type="submit" value="Create" class="text-center bg-indigo-400 w-full rounded cursor-pointer">
+    </form>
+
+    <div>
+        <h1 class="text-lg font-bold">Categories</h1>
+        <div class="flex flex-col">
+            @foreach (Category category in Model.AllCategories)
+            {
+                <a href="/category/@category.CategoryId">@category.Name</a>
+            }
+        </div>
+    </div>
+
+
+
+</div>

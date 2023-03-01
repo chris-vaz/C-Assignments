@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+<h1>@ViewData["Title"]</h1>
+
+@model MyViewModel
+
+<h1>@Model.Category.Name</h1>
+
+<div class="flex justify-between w-1/2 mx-auto">
+    <div>
+        <h2>Products in this Category</h2>
+        @if (Model.Category.AssociationsToProducts != null)
+        {
+            @foreach (Association product in Model.Category.AssociationsToProducts)
+            {
+                <p>@product.Product.Name</p>
+            }
+        }
+    </div>
+
+    <div>
+        <form asp-action="CreateAssociation" method="post">
+            <select asp-for="@Model.Product.ProductId" name="ProductId">
+
+                @foreach (Product p in Model.AllProducts)
+                {
+                    <option value="@p.ProductId">@p.Name</option>
+                }
+
+            </select>
+            <input type="hidden" value="@Model.Category.CategoryId" name="CategoryId">
+            <input type="submit" value="Add" class="p-3 rounded bg-indigo-400 cursor-pointer">
+        </form>
+    </div>
+</div>

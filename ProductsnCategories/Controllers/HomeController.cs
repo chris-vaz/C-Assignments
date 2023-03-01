@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProductsnCategories.Models;
 
 namespace ProductsnCategories.Controllers;
@@ -42,15 +43,37 @@ public class HomeController : Controller
     [HttpGet("/categories/{id}")]
     public IActionResult OneCategory(int id)
     {
-        Category? oneCat = _context.Categories.FirstOrDefault(c => c.CategoryId == id);
-        return View("OneCategory",oneCat);
+        Category? oneCat = _context.Categories.Include(a => a.CAssociations).ThenInclude(a => a.Product).FirstOrDefault(c => c.CategoryId == id);
+        List<Product> NotUsedProduct = _context.Products.ToList();
+
+        foreach (Product p in NotUsedProduct.ToList())
+        {
+            foreach (Association product in oneCat.CAssociations.ToList())
+            {
+                if (product.Product.Name == p.Name)
+                {
+                    Console.WriteLine("HIT");
+                    NotUsedProduct.Remove(product.Product);
+                }
+            }
+        }
+        MyViewModel AllInfo = new MyViewModel
+        {
+            Category = oneCat,
+            AllProducts = NotUsedProduct
+        };
+        return View(AllInfo);
     }
 
     [HttpGet("/products/{id}")]
     public IActionResult OneProduct(int id)
     {
         Product? onePro = _context.Products.FirstOrDefault(c => c.ProductId == id);
-        return View("OneProduct",onePro);
+        if (onePro == null)
+        {
+            return NotFound();
+        }
+        return View("OneProduct", onePro);
     }
 
     [HttpPost("/product/create")]
@@ -68,6 +91,27 @@ public class HomeController : Controller
             return View("Index");
         }
     }
+
+    [HttpPost("/products/addCategory")]
+    public IActionResult CreateAssociation(Association newAssociation)
+    {
+
+        if (ModelState.IsValid)
+        {
+            Console.WriteLine(newAssociation.CategoryId);
+            Console.WriteLine(newAssociation.ProductId);
+            _context.Add(newAssociation);
+            _context.SaveChanges();
+            return Redirect($"/products/{newAssociation.ProductId}");
+        }
+
+        else
+        {
+            return View($"/products/{newAssociation.ProductId}");
+        }
+    }
+
+
 
     [HttpPost("/category/create")]
     public IActionResult CreateCategory(Category newCategory)

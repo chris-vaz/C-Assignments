@@ -1,0 +1,8 @@
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.csproj.AssemblyReference.cache
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.AssemblyInfoInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.AssemblyInfo.cs
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.csproj.CoreCompileInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.RazorAssemblyInfo.cache
+C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\obj\Debug\net6.0\ProductsCategoriesBrandon.RazorAssemblyInfo.cs

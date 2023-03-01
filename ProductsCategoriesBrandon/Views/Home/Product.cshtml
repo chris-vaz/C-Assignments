@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model MyViewModel
+
+<h1>@Model.Product.Name</h1>
+
+<div class="flex justify-between w-1/2 mx-auto">
+    <div>
+        <h2>Categories</h2>
+        @if (Model.Product.AssociationsToCategories != null)
+        {
+            @foreach (Association category in Model.Product.AssociationsToCategories)
+            {
+                <p>@category.Category.Name</p>
+            }
+        }
+    </div>
+
+    <div>
+        <form asp-action="CreateAssociation" method="post">
+            <select asp-for="@Model.Category.CategoryId" name="CategoryId">
+
+                @foreach (Category category in Model.AllCategories)
+                {
+                    <option value="@category.CategoryId">@category.Name</option>
+                }
+
+            </select>
+            <input type="hidden" value="@Model.Product.ProductId" name="ProductId">
+            <input type="submit" value="Add" class="p-3 rounded bg-indigo-400 cursor-pointer">
+        </form>
+    </div>
+</div>
