@@ -43,36 +43,20 @@ public class HomeController : Controller
     [HttpGet("/categories/{id}")]
     public IActionResult OneCategory(int id)
     {
-        Category? oneCat = _context.Categories.Include(a => a.CAssociations).ThenInclude(a => a.Product).FirstOrDefault(c => c.CategoryId == id);
-        List<Product> NotUsedProduct = _context.Products.ToList();
-
-        foreach (Product p in NotUsedProduct.ToList())
-        {
-            foreach (Association product in oneCat.CAssociations.ToList())
-            {
-                if (product.Product.Name == p.Name)
-                {
-                    Console.WriteLine("HIT");
-                    NotUsedProduct.Remove(product.Product);
-                }
-            }
-        }
+        Category? oneCat = _context.Categories.Include(a => a.CAssociations).ThenInclude(b => b.Product).FirstOrDefault(c => c.CategoryId == id);
+        List<Product> allProducts = _context.Products.ToList();
         MyViewModel AllInfo = new MyViewModel
         {
             Category = oneCat,
-            AllProducts = NotUsedProduct
+            AllProducts = allProducts
         };
-        return View(AllInfo);
+        return View("OneCategory", AllInfo);
     }
 
     [HttpGet("/products/{id}")]
     public IActionResult OneProduct(int id)
     {
         Product? onePro = _context.Products.FirstOrDefault(c => c.ProductId == id);
-        if (onePro == null)
-        {
-            return NotFound();
-        }
         return View("OneProduct", onePro);
     }
 
@@ -93,21 +77,18 @@ public class HomeController : Controller
     }
 
     [HttpPost("/products/addCategory")]
-    public IActionResult CreateAssociation(Association newAssociation)
+    public IActionResult CreateAssociation(Association newAssociation, int categoryId)
     {
-
         if (ModelState.IsValid)
         {
-            Console.WriteLine(newAssociation.CategoryId);
-            Console.WriteLine(newAssociation.ProductId);
+            newAssociation.CategoryId = categoryId;
             _context.Add(newAssociation);
             _context.SaveChanges();
-            return Redirect($"/products/{newAssociation.ProductId}");
+            return RedirectToAction("Index");
         }
-
         else
         {
-            return View($"/products/{newAssociation.ProductId}");
+            return View("Privacy");
         }
     }
 

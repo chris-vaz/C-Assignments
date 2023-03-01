@@ -8,45 +8,45 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProductsCategoriesBrandon
 build_property.RootNamespace = ProductsCategoriesBrandon
-build_property.ProjectDir = C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\
+build_property.ProjectDir = c:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon
+build_property.MSBuildProjectDirectory = c:\Users\chris\Desktop\CSharpProjects\ProductsCategoriesBrandon
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/AllCategories.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/AllCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGxDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/AllProducts.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/AllProducts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGxQcm9kdWN0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/Category.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYXRlZ29yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/Product.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Home/Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Shared/Error.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/_ViewImports.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/_ViewStart.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Shared/_Layout.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/ProductsCategoriesBrandon/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2trkjz6wnn

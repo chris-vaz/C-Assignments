@@ -15,9 +15,4 @@ public class Association
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-
-    
-    // Our navigation property to track which Chef made this Dish
-    // It is VERY important to include the ? on the datatype or this won't work!
-    // public Chef? Cook { get; set; }
 }
