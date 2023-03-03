@@ -18,7 +18,7 @@ public class User
     [MinLength(8, ErrorMessage = "Password must be atleast 8 characters")]
     public string Password { get; set; }
 
-    public List<Association> WeddingsToAttend { get; set; }
+    public List<Association> WeddingsToAttend { get; set; } = new List<Association>();
 
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;

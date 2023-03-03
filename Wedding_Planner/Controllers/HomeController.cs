@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Wedding_Planner.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.EntityFrameworkCore;
 
 namespace Wedding_Planner.Controllers;
 
@@ -37,6 +38,7 @@ public class HomeController : Controller
         }
         else
         {
+            Console.WriteLine("Invalid");
             return View("Index");
         }
     }
@@ -77,6 +79,24 @@ public class HomeController : Controller
         }
     }
 
+    [HttpPost("wedding/create")]
+    public IActionResult CreateWedding(Wedding newWedding)
+    {
+
+        if (ModelState.IsValid)
+        {
+
+            _context.Weddings.Add(newWedding);
+            _context.SaveChanges();
+            return RedirectToAction("Success");
+        }
+
+        else
+        {
+            return View("PlanWedding");
+        }
+    }
+
     [HttpPost("logout")]
     public IActionResult Logout()
     {
@@ -88,8 +108,31 @@ public class HomeController : Controller
     [HttpGet(("success"))]
     public IActionResult Success()
     {
+        MyViewModel AllWeddingInfo = new MyViewModel
+        {
+            AllWeddings = _context.Weddings.Include(a => a.GuestList).ToList(),
+        };
+        return View(AllWeddingInfo);
+    }
+
+    [HttpGet("plan")]
+    public IActionResult PlanWedding()
+    {
         return View();
     }
+
+    [HttpPost("wedding/{WeddingId}/delete")]
+    public IActionResult DeleteWedding(int WeddingId)
+    {
+        Wedding? WeddingToDelete = _context.Weddings.FirstOrDefault(w => w.WeddingId == WeddingId);
+
+        _context.Weddings.Remove(WeddingToDelete);
+
+        _context.SaveChanges();
+
+        return RedirectToAction("Success");
+    }
+
 
     public IActionResult Privacy()
     {

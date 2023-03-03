@@ -1,0 +1,33 @@
+@model Wedding
+
+<div class="text-center ">
+    <h1 class>Plan a Wedding</h1>
+    <form asp-action="CreateWedding" class="form-control">
+
+        <span asp-validation-for="WedderOne" class="text-danger"></span>
+        <div class="form-group">
+            <label>Wedder One:</label>
+            <input type="text" asp-for="WedderOne" class="form-control">
+        </div>
+
+        <span asp-validation-for="WedderTwo" class="text-danger"></span>
+        <div>
+            <label>Wedder Two:</label>
+            <input type="text" asp-for="WedderTwo" class="form-control">
+        </div>
+
+        <span asp-validation-for="Date" class="text-danger"></span>
+        <div>
+            <label>Date: </label>
+            <input type="date" asp-for="Date" class="form-control">
+        </div>
+
+        <span asp-validation-for="Address" class="text-danger"></span>
+        <div>
+            <label>Address: </label>
+            <input type="text" asp-for="Address" class="form-control">
+        </div>
+        <input type="hidden" asp-for="Creator" value='@Context.Session.GetInt32("UserId")' >
+        <input type="submit" value="Plan Wedding" class="btn btn-primary mt-5">
+    </form>
+</div>

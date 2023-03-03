@@ -14,7 +14,53 @@
     </header>
 
     <body>
+        @model MyViewModel
+
         <h1 class="display-5">List of Weddings: </h1>
+        <table class="table">
+            <tr>
+                <th>Wedding of</th>
+                <th>Date</th>
+                <th>Guest Count</th>
+                <th>Action</th>
+            </tr>
+
+            @foreach (Wedding wedding in Model.AllWeddings)
+            {
+                int? LoggedInUserId = Context.Session.GetInt32("UserId");
+                //every loop i get a new association. I run it through the association to see if there exist an association
+                //between the wedding and logged in user
+                Association? association = wedding.GuestList.FirstOrDefault(g => g.UserId == LoggedInUserId);
+                int total = wedding.GuestList.Count + 1;
+                <tr>
+                    <td>@wedding.WedderOne & @wedding.WedderTwo</td>
+                    <td>@wedding.Date</td>
+                    <td>@total</td>
+                    <td>
+                        @if (wedding.Creator == LoggedInUserId)
+                        {
+                            <form action="/wedding/@wedding.WeddingId/delete" method="post">
+                                <button class="btn btn-danger">Delete</button>
+                            </form>
+                        }
+                        else if (association != null)
+                        {
+                            <form action="/association/@association.AssociationId/delete" method="post">
+                                <button class="btn btn-primary">UnRSVP</button>
+                            </form>
+                        }
+                        else
+                        {
+                            <form action="/association/create" method="post">
+                                <input type="hidden" name="WeddingId" value="@wedding.WeddingId">
+                                <input type="hidden" name="UserId" value='@LoggedInUserId'>
+                                <button class="btn btn-primary">RSVP</button>
+                            </form>
+                        }
+                    </td>
+                </tr>
+            }
+        </table>
     </body>
 
 </body>
