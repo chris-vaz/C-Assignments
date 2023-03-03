@@ -133,6 +133,36 @@ public class HomeController : Controller
         return RedirectToAction("Success");
     }
 
+    [HttpPost("association/create")]
+    public IActionResult CreateAssociation(Association newAssociation)
+    {
+        if (ModelState.IsValid)
+        {
+            _context.Associations.Add(newAssociation);
+            _context.SaveChanges();
+            return RedirectToAction("Success");
+        }
+
+        else
+        {
+            return View("Success");
+        }
+
+    }
+
+
+    [HttpPost("association/{AssociationId}/delete")]
+    public IActionResult DeleteAssociation(int AssociationId)
+    {
+        Association? AssociationToDelete = _context.Associations.FirstOrDefault(a => a.AssociationId == AssociationId);
+
+        _context.Associations.Remove(AssociationToDelete);
+
+        _context.SaveChanges();
+
+        return RedirectToAction("Success");
+    }
+
 
     public IActionResult Privacy()
     {

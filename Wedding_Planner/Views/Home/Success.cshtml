@@ -30,6 +30,8 @@
                 int? LoggedInUserId = Context.Session.GetInt32("UserId");
                 //every loop i get a new association. I run it through the association to see if there exist an association
                 //between the wedding and logged in user
+
+                //Initializing an association by tracking the particular Logged In User's ID
                 Association? association = wedding.GuestList.FirstOrDefault(g => g.UserId == LoggedInUserId);
                 int total = wedding.GuestList.Count + 1;
                 <tr>
@@ -57,6 +59,8 @@
                                 <button class="btn btn-primary">RSVP</button>
                             </form>
                         }
+                        @* Form above is used for creating an association in regard with Guest List. If not on Guest list
+                        then not on RSVP button state *@
                     </td>
                 </tr>
             }
