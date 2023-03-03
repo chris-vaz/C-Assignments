@@ -56,7 +56,7 @@ public class HomeController : Controller
     [HttpGet("/products/{id}")]
     public IActionResult OneProduct(int id)
     {
-        Product? onePro = _context.Products.FirstOrDefault(c => c.ProductId == id);
+        Product? onePro = _context.Products.Include(a => a.PAssociations).ThenInclude(b => b.Category).FirstOrDefault(c => c.ProductId == id);
         List<Category> allCategories = _context.Categories.ToList();
         MyViewModel AllInfop = new MyViewModel
         {
@@ -82,37 +82,73 @@ public class HomeController : Controller
         }
     }
 
-    [HttpPost("/products/addCategory")]
+    // [HttpPost("/products/addCategory")]
+    // public IActionResult CreateAssociation(Association newAssociation)
+    // {
+    //     if (ModelState.IsValid)
+    //     {
+    //         // newAssociation.CategoryId = categoryId;
+    //         _context.Add(newAssociation);
+    //         _context.SaveChanges();
+    //         return RedirectToAction("Index");
+    //     }
+    //     else
+    //     {
+    //         return View("Privacy");
+    //     }
+    // }
+
+    // This is the POST route for creating a Category association 
+    [HttpPost("association/create")]
     public IActionResult CreateAssociation(Association newAssociation)
     {
         if (ModelState.IsValid)
         {
-            // newAssociation.CategoryId = categoryId;
-            _context.Add(newAssociation);
+            _context.Associations.Add(newAssociation);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Categories");
         }
+
         else
         {
-            return View("Privacy");
+            return View("OneCategory");
         }
+
     }
 
-    [HttpPost("/categories/addProduct")]
+    // This is the POST route for creating a product association 
+    [HttpPost("associationp/create")]
     public IActionResult CreateAssociationP(Association newAssociation)
     {
         if (ModelState.IsValid)
         {
-            // newAssociation.CategoryId = categoryId;
-            _context.Add(newAssociation);
+            _context.Associations.Add(newAssociation);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
+
         else
         {
-            return View("Privacy");
+            return View("OneProduct");
         }
+
     }
+
+    // [HttpPost("/categories/addProduct")]
+    // public IActionResult CreateAssociationP(Association newAssociation)
+    // {
+    //     if (ModelState.IsValid)
+    //     {
+    //         // newAssociation.CategoryId = categoryId;
+    //         _context.Add(newAssociation);
+    //         _context.SaveChanges();
+    //         return RedirectToAction("Index");
+    //     }
+    //     else
+    //     {
+    //         return View("Privacy");
+    //     }
+    // }
 
 
 

@@ -7,24 +7,24 @@
     <h1 class="display-4">@Model.Product.Name</h1>
     <section class="d-flex justify-content-around">
         <div>
-            <h1 class="display-6 mt-3">Category</h1>
+            <h1 class="display-6 mt-3">Categories</h1>
             <ul>
-                @foreach (Association c in @Model.Product.PAssociations)
+                @foreach (Association p in @Model.Product.PAssociations)
                 {
-                    <li>@c.Category.Name</li>
+                    <li>@p.Category.Name</li>
                 }
             </ul>
         </div>
         <div>
             <h1 class="display-6 mt-3">Add Category</h1>
-            <form asp-action="CreateAssociationP" method="post" asp-controller="Home">
-                <select asp-for="@Model.Category.CategoryId" class="form-select mb-4">
-                    @foreach (Category p in Model.AllCategories)
+            <form action="/associationp/create" method="post">
+                <select class="form-select mb-4" name="CategoryId">
+                    @foreach (Category c in Model.AllCategories)
                     {
-                        <option value="@p.CategoryId">@p.Name</option>
+                        <option value="@c.CategoryId">@c.Name</option>
                     }
                 </select>
-                <input asp-for="@Model.Product.ProductId" type="hidden">
+                <input type="hidden" name="ProductId" value="@Model.Product.ProductId">
                 <input type="submit" value="Add" class="btn btn-primary">
             </form>
         </div>

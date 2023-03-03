@@ -8,57 +8,57 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Wedding_Planner
 build_property.RootNamespace = Wedding_Planner
-build_property.ProjectDir = C:\Users\chris\Desktop\CSharpProjects\Wedding_Planner\
+build_property.ProjectDir = c:\Users\chris\Desktop\CSharpProjects\Wedding_Planner\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chris\Desktop\CSharpProjects\Wedding_Planner
+build_property.MSBuildProjectDirectory = c:\Users\chris\Desktop\CSharpProjects\Wedding_Planner
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/DisplayWedding.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/DisplayWedding.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEaXNwbGF5V2VkZGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/Index.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/PlanWedding.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/PlanWedding.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQbGFuV2VkZGluZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/Privacy.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/Success.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/_Login.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/_Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/_Navbar.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Home/_Navbar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfTmF2YmFyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Shared/Error.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/_ViewImports.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/_ViewStart.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Shared/_Layout.cshtml]
+[c:/Users/chris/Desktop/CSharpProjects/Wedding_Planner/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-r8csvdm0m9
