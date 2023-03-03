@@ -1,0 +1,10 @@
+@model MyViewModel
+@* grabs the model, name of the class and then the var in the class *@
+<h1 class="display-4"> Wedding - @Model.Wedding.WedderOne & @Model.Wedding.WedderTwo</h1>
+
+<h1 class="display-5">Date - @Model.Wedding.Date.ToString("MM/dd/yyyy")</h1>
+<h1 class="display-5">Guest List: </h1>
+@foreach (Association guest in Model.GuestList)
+{
+    <p class="display-6">@guest.User.Username</p>
+}

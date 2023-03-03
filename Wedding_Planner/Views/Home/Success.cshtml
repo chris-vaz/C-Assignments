@@ -35,8 +35,8 @@
                 Association? association = wedding.GuestList.FirstOrDefault(g => g.UserId == LoggedInUserId);
                 int total = wedding.GuestList.Count + 1;
                 <tr>
-                    <td>@wedding.WedderOne & @wedding.WedderTwo</td>
-                    <td>@wedding.Date</td>
+                    <td><a href="/wedding/@wedding.WeddingId">@wedding.WedderOne & @wedding.WedderTwo</a></td>
+                    <td>@wedding.Date.ToString("MM/dd/yyyy")</td>
                     <td>@total</td>
                     <td>
                         @if (wedding.Creator == LoggedInUserId)
@@ -60,7 +60,7 @@
                             </form>
                         }
                         @* Form above is used for creating an association in regard with Guest List. If not on Guest list
-                        then not on RSVP button state *@
+                    then not on RSVP button state *@
                     </td>
                 </tr>
             }

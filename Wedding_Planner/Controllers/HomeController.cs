@@ -121,6 +121,21 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("wedding/{WeddingId}")]
+    public IActionResult DisplayWedding(int WeddingId)
+    {
+
+        Wedding? DisplayWedding = _context.Weddings.Include(a => a.GuestList).ThenInclude(a => a.User).FirstOrDefault(c => c.WeddingId == WeddingId);
+
+        MyViewModel CurrentWedding = new MyViewModel
+        {
+            GuestList = DisplayWedding.GuestList.ToList(),
+            Wedding = DisplayWedding
+        };
+
+        return View(CurrentWedding);
+    }
+
     [HttpPost("wedding/{WeddingId}/delete")]
     public IActionResult DeleteWedding(int WeddingId)
     {
