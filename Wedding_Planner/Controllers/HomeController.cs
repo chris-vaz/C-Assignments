@@ -102,7 +102,11 @@ public class HomeController : Controller
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }
+// User authentication - This section allows only logged-in users to view any pages
+// beyond the logn/register page
 
+// Anyone who is not logged in and who attempts to access any other pages should be 
+// redirected to the login page
 public class SessionCheckAttribute : ActionFilterAttribute
 {
     public override void OnActionExecuting(ActionExecutingContext context)
