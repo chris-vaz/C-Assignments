@@ -1,0 +1,134 @@
+/* _content/Pokedex/Shared/MainLayout.razor.rz.scp.css */
+.page[b-xq4s9mn277] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-xq4s9mn277] {
+    flex: 1;
+}
+
+.sidebar[b-xq4s9mn277] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-xq4s9mn277] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-xq4s9mn277]  a, .top-row .btn-link[b-xq4s9mn277] {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+    }
+
+    .top-row a:first-child[b-xq4s9mn277] {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row:not(.auth)[b-xq4s9mn277] {
+        display: none;
+    }
+
+    .top-row.auth[b-xq4s9mn277] {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-xq4s9mn277], .top-row .btn-link[b-xq4s9mn277] {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-xq4s9mn277] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-xq4s9mn277] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-xq4s9mn277] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row[b-xq4s9mn277], article[b-xq4s9mn277] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* _content/Pokedex/Shared/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-38gbxz2mky] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-38gbxz2mky] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-38gbxz2mky] {
+    font-size: 1.1rem;
+}
+
+.oi[b-38gbxz2mky] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-38gbxz2mky] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-38gbxz2mky] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-38gbxz2mky] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-38gbxz2mky]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-38gbxz2mky]  a.active {
+    background-color: rgba(255,255,255,0.25);
+    color: white;
+}
+
+.nav-item[b-38gbxz2mky]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-38gbxz2mky] {
+        display: none;
+    }
+
+    .collapse[b-38gbxz2mky] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+}
