@@ -1,14 +1,12 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import TodoForm from './components/TodoForm';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import GetTodos from './components/GetTodos';
 
 function App() {
   return (
-    <div className="App">
-      <TodoForm/>
-      <hr/>
-      <GetTodos/>
+    <div className="App col-lg-8 col-md-10 col-sm-12 bg-light p-4">
+      <GetTodos />
     </div>
   );
 }

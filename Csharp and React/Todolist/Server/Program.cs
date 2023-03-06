@@ -4,6 +4,8 @@ using Server.Models;
 var builder = WebApplication.CreateBuilder(args);
 // Added connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Add services to the container
 builder.Services.AddControllers();
 // Add cors
 builder.Services.AddCors(options =>

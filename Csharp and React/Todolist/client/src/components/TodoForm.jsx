@@ -1,21 +1,25 @@
 import { useState } from "react";
 import axios from "axios";
+
 const TodoForm = props => {
     const [form, setForm] = useState({
         name: "",
         isComplete: false
     });
     const [errors, setErrors] = useState(null);
+
     const onChangeHandler = e => {
         setForm({ ...form, [e.target.name]: e.target.value })
     }
-    // This empties the form after you submit
+
+    // This just empties the form after you submit
     const formReset = () => {
         setForm({
             name: "",
             isComplete: false
         })
     }
+
     const formHandler = async e => {
         e.preventDefault();
         // try to add the item, otherwise, get errors
@@ -26,6 +30,8 @@ const TodoForm = props => {
                 data: form,
                 contentType: "application/json"
             });
+            // Trigger an update for the get all
+            props.triggerUpdate();
             // Clears the form
             formReset();
             // Resets errors to null in case there had been some
@@ -36,22 +42,26 @@ const TodoForm = props => {
             setErrors(err.response.data.errors.Name);
         }
     }
+
     return (
         <>
-            <h2>Add a Task</h2>
-            <form onSubmit={formHandler}>
-                <div>
-                    <label htmlFor="name">Task:</label>
-                    <input type="text" name="name" onChange={onChangeHandler} value={form.name} />
-                    <div>
-                        {errors ? <span className="text-danger">{errors}</span> : ""}
+            <h2 className="pt-3">Add a Task</h2>
+            <div className="d-flex justify-content-center">
+                <form onSubmit={formHandler} className="col-12">
+                    <div class="p-2">
+                        <label htmlFor="name">Task:</label>
+                        <input type="text" name="name" onChange={onChangeHandler} value={form.name} className="form-control" />
+                        <div>
+                            {errors ? <span className="text-danger">{errors}</span> : ""}
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <input type="submit" value="Add Task" />
-                </div>
-            </form>
+                    <div>
+                        <input type="submit" value="Add Task" className="btn btn-success" />
+                    </div>
+                </form>
+            </div>
         </>
     );
 }
+
 export default TodoForm;
