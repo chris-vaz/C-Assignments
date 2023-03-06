@@ -1,0 +1,15 @@
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\bin\Debug\net6.0\APITest.exe
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\bin\Debug\net6.0\APITest.deps.json
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\bin\Debug\net6.0\APITest.runtimeconfig.json
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\bin\Debug\net6.0\APITest.dll
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\bin\Debug\net6.0\APITest.pdb
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.csproj.AssemblyReference.cache
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.AssemblyInfoInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.AssemblyInfo.cs
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.csproj.CoreCompileInputs.cache
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.dll
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\refint\APITest.dll
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.pdb
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\APITest.genruntimeconfig.cache
+C:\Users\chris\Desktop\CSharpProjects\Csharp and APIs\APITest\obj\Debug\net6.0\ref\APITest.dll
