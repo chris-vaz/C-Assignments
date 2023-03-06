@@ -66,7 +66,7 @@ namespace Server.Models
 
 ## Estabilishing a connection with our database
 
-Once your model is ready to go, the next part is to set up your Context file. Also in Models, create a file called TodoContext.cs and add the following code. It won't look much different from the code you've written before.
+Once your model is ready to go, the next part is to set up your Context file. Also in Models, create a file called TodoContext.cs and add the following code. It won't look much different from the code you've written before. 
 
 ```csharp
 using Microsoft.EntityFrameworkCore;
